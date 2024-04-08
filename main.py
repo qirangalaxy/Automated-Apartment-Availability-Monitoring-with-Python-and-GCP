@@ -26,17 +26,18 @@ def check_availability(url):
 
 
 def send_email(sender_email, recipient_email, subject):
-    # 创建邮件内容
+    # Create email content
     import smtplib
     from email.mime.text import MIMEText
+    # The 
     msg = MIMEText('')
     msg['Subject'] = subject
     msg['From'] = sender_email
     msg['To'] = recipient_email
-    # 连接到邮件服务器并发送邮件
+    # Connect with gmail (can be any email) server and send email
     with smtplib.SMTP('smtp.gmail.com', 587) as server:
         server.starttls()
-        server.login('lala.zqrno1@gmail.com', 'wwjj iiyk woou ucbc')
+        server.login('yourgmail', 'youremailpw')
         server.sendmail(sender_email, recipient_email, msg.as_string())
 
 def main():
