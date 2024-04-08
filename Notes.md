@@ -1,4 +1,4 @@
-# Project Title
+# Automated Apartment Availability Monitoring with Python and GCP
 
 A short description about the project and/or client.
 
@@ -44,12 +44,16 @@ Additional notes on how to deploy this on a live or release system. Explaining t
 * Release:
 * Development:
 
-### Branches
-
+### Potential Obstacles And Solutions
+Here is a list of problems I faced during coding under local python and during Cloud Functions & Cloud Scheduler construction under GCP and actions I took to solve them.
+#### Coding Construction in Python
 * Master:
 * Feature:
 * Bugfix:
 * etc...
+#### Cloud Functions Creation in GCP
+*
+#### CLoud Scheduler Creation in GCP
 
 ## Additional Documentation and Acknowledgments
 
