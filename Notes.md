@@ -34,11 +34,14 @@ $ Second example
 $ And keep this in mind
 ```
 
-## Deployment
+## i
 
 Additional notes on how to deploy this on a live or release system. Explaining the most important branches, what pipelines they trigger and how to update the database (if anything special).
 
-### Server
+### Suggestions Along the Way
+#### 1. Import libraries right before using it.
+This is the tips I 
+#### 2. Make sure all necessary libraries are listed in 
 
 * Live:
 * Release:
@@ -52,7 +55,8 @@ Here is a list of problems I faced during coding under local python and during C
 * Bugfix:
 * etc...
 #### Cloud Functions Creation in GCP
-*
+##### 1. Fail to pass the test run.
+
 #### CLoud Scheduler Creation in GCP
 
 ## Additional Documentation and Acknowledgments
