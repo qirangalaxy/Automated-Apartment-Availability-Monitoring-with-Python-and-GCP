@@ -77,8 +77,4 @@ beautifulsoup4
 ```
 
 ## Additional Documentation and Acknowledgments
-
-* Project folder on server:
-* Confluence link:
-* Asana board:
-* etc...
+This GitHub post aims to share the process of combining Google Cloud Functions and Google Cloud Scheduler to automate Python code execution since during the development process, I found limited supporting materials or tutorials available online. Therefore, the purpose of this post is to provide guidance on implementing Python automation with GCP and to encourage its proper and ethical use only.
