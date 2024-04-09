@@ -3,7 +3,7 @@
 A short description about the project and/or client.
 
 ## Getting Started
-The code itself is relatively straightforward, comprising only three simple functions. However, the framework, highlighted details, and subsequent steps related to Google Cloud Platform (GCP) are where the true value lies. Hopefully, these aspects will provide valuable insights and guidance for your reference.
+The code itself is relatively straightforward, comprising only three simple functions. However, the framework, highlighted details, and subsequent steps and solutions related to Google Cloud Platform (GCP) are where the true value lies. Hopefully, these aspects will provide valuable insights and guidance for your reference.
 
 ## Extended Applications
 
@@ -54,17 +54,21 @@ def main():
 The example code provided a webpage displaying the availability information for different types of rooms at a specific London apartment complex. Here, the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
 ## Workflows On GCP & Suggestions Along the Way
-1. After having the code, create google cloud scheduler first, including creation of trigger (I used Pub/Sub), then generate google cloud functions where you select the consistent trigger used for scheduler.
-2. You can assign several functions to one specified trigger; in this case, since webpages of all apartments from this real estate have similar web structures, a little revision to the main.py is needed to generate several functions, allowing you to monitor desired rooms from several apartments at the same time.
-3. When you don't know how to set up parameters at GCP, just take time to read through necessary documents it provided, which are all pretty clear, just set besides each field.
-4. If you want to verify if you set up successful the scheduler with linked function, perform checking availability for available rooms first and see if you get an email at scheduled time.
-5. Import libraries right before using it (as demostrated in the python code); this is a suggestion that I saw from a reddit comment.
+1. After having the code, create google cloud scheduler first, including creation of a trigger (I used Pub/Sub).
+2. Create a google cloud function
+   2.1 Select the same trigger used for scheduler.
+   2.2 Since this example used python for coding, select "Python" for Runtime.
+   2.3 Copy and paste the main.py to main.py and requirements.txt (code provided below) to requirements.txt.
+   2.4 Type "main" to Entry point because it is the first function the program starts with.
+3. You can repeat the previous step to generate several functions and assign them to the same trigger; in this case, since webpages of all apartments from this real estate have similar web structures, a little revision to the main.py is needed to have different functions, allowing you to monitor desired rooms from several apartments at the same time.
 
-## Additional Comments
-:pushpin: Most importantly, always check if scrapping certain websites is allowed; you can check either from robots.txt or using API instead.
-:pushpin: Before writing the python code, think fully the logic and break down the task into several key phases.
-:pushpin: If you want to check if the code can be run successfully, you can search for the available room first and see if you get an email.
-
+## :clipboard:Additional Comments
+* Most importantly, always check if scrapping certain websites is allowed; you can check either from robots.txt or using API instead.
+* Before writing the python code, think fully the logic and break down the task into several key phases.
+* When you don't know how to set up parameters at GCP, just take time to read through necessary documents it provided, which are all pretty clear, just set besides each field.
+* If you want to check if the code can be run successfully, you can search for the available room first and see if you get an email.
+* Similarly, if you want to verify if you set up successful the scheduler with linked functions, perform checking availability for available rooms first and see if you get an email at scheduled time.
+* Import libraries right before using it (as demostrated in the python code); this is a suggestion that I saw from a reddit comment.
 
 ## :construction:Potential Obstacles And Solutions
 Here is a list of problems I faced and you might face during coding under local python and during Cloud Functions & Cloud Scheduler construction under GCP and actions I took to solve them.
@@ -92,6 +96,7 @@ As listed on the site, Notice: App passwords are less secure than using up-to-da
 * Check if the "Entry point" is the first function/step your whole coding starts with; for example, here, you defined three functions, you should not just leave them there but add another code of main() to perform the whole task thus "Entry point" = main
 * Check if all extra libraries and their versions are written under requirements.txt; Specifically under this apartment case, the version of beautifulsoup4 does not need to be specified as it works well when just leave it there thus it looks like:
 ```
+# requirements.txt
 functions-framework==3.*
 requests == 2.31.0
 beautifulsoup4
