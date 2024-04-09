@@ -33,7 +33,11 @@ Again, the code at this step is highly customized and should be adjusted accordi
     found_desired_room = False  # Boolean var used later
 ```
 
-In this particular example, since my target url (https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii) has certain HTML structure where information about all room types contained in the class of "suite__column". Each room type consists of 7 elements separated by "suite__column" (refer the graph below), including a hyperlink of floorplan picture and the suite name, an optional link to a virtual tour, a string of "Bedrooms" and number of bedrooms the suite has, a string of "Baths" and number of baths it has, a string of "Sq.Ft." and value indicating the area, a string of "Rent" and the range, a string of "Availability" and a string of "not available". In addition, a boolean is created to indicate if a desired room is found or not, taken as outcome value.
+In this particular example, since my target url (https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii) has certain HTML structure where information about all room types contained in the class of "suite__column". 
+
+Each room type consists of 7 elements separated by "suite__column" (refer the graph below), including a hyperlink of floorplan picture and the suite name, an optional link to a virtual tour, a string of "Bedrooms" and number of bedrooms the suite has, a string of "Baths" and number of baths it has, a string of "Sq.Ft." and value indicating the area, a string of "Rent" and the range, a string of "Availability" and a string of "not available". 
+
+In addition, a boolean, _found_desired_room_ is created to indicate if a desired room is found or not, taken as outcome value.
 
 
 ```
