@@ -36,6 +36,9 @@ Again, the code at this step is highly customized and should be adjusted accordi
 In this particular example, since my target url (https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii) has certain HTML structure where information about all room types contained in the class of "suite__column". 
 
 Each room type consists of 7 elements separated by "suite__column" (refer the graph below), including a hyperlink of floorplan picture and the suite name, an optional link to a virtual tour, a string of "Bedrooms" and number of bedrooms the suite has, a string of "Baths" and number of baths it has, a string of "Sq.Ft." and value indicating the area, a string of "Rent" and the range, a string of "Availability" and a string of "not available". 
+![elements](https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/4cdfa295-a4ed-4624-82d7-9d3af5048548)
+
+
 
 In addition, a boolean parameter, _found_desired_room_, is created to indicate if a desired room is found or not, taken as outcome value.
 
@@ -47,7 +50,7 @@ In addition, a boolean parameter, _found_desired_room_, is created to indicate i
         room_name = link_element.text.strip()
 ```
 
-Each group, indicating one room type, is identified with having 7 consecutive elements. The room name can be extracted by searching through the first element where name of room is located between <a class="hyperlink-default floorplan-link" ...> & <a>.
+Each group, indicating one room type, consists of 7 consecutive elements; thus the loop iterates through each group, or each suite, at each time. The room name can be extracted by searching through the first element where name of room is located between <a class="hyperlink-default floorplan-link" ...> & <a>.
 
 ```
         # this is the name of my desired 1b room; you can add more names or modify the if statement for your own intention
@@ -58,14 +61,14 @@ Each group, indicating one room type, is identified with having 7 consecutive el
             if availability_text == 'not available':
                 return False
             else:
-                found_desired_room = True  # find the desired room so that the boolean var turned to be True
+                found_desired_room = True  # find the desired room so that the Boolean var turned to be True
                 break  # once any desired room found just end the loop
 
     return found_desired_room
 
 ```
 
-If the room is what we desired, we will go to verify its availability, or the boolean parameter goes directly to be "False". By applying similar logic, we can extract the text under "Availability" and assign _found_desired_room_ to be "False" if it is "not available", or it returns "True". The for loop will check every single room listed on the web page and will stop immediately if the boolean indicator turned to be "True". 
+If the room is what we desired, we will go to verify its availability, or the Boolean parameter goes directly to be "False" and the loop passes this group continuing check the condition for the next group. By applying similar logic, we can extract the text under "Availability" and assign _found_desired_room_ to be "False" if it is "not available", or it returns "True". The for loop will check every single room listed on the web page and will stop immediately if the boolean indicator turned to be "True". 
 
 <img src = "https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/2d3aa2ff-1154-4fdc-a94f-4c21a076322c" width=30% height=30%>
 <img src = "https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/2dbdb241-e2b2-48a5-926b-ba603301566c" width=25% height=30%>
