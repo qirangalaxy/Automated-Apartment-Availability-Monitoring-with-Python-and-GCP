@@ -1,4 +1,4 @@
-# Automated Apartment Availability Monitoring with Python and GCP:mailbox_with_mail:
+# Automated Apartment Availability Monitoring with Python and GCP :mailbox_with_mail:
 
 A short description about the project and/or client.
 
