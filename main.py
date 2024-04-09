@@ -30,7 +30,6 @@ def send_email(sender_email, recipient_email, subject):
     # Create email content
     import smtplib
     from email.mime.text import MIMEText
-    # The 
     msg = MIMEText('')
     msg['Subject'] = subject
     msg['From'] = sender_email
