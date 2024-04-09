@@ -39,9 +39,7 @@ $ And keep this in mind
 Additional notes on how to deploy this on a live or release system. Explaining the most important branches, what pipelines they trigger and how to update the database (if anything special).
 
 ### Suggestions Along the Way
-#### 1. Import libraries right before using it.
-This is the tips I 
-#### 2. Make sure all necessary libraries are listed in 
+#### 1. After having the code, create google cloud scheduler first, including creation of trigger (I used Pub/Sub), then generate google cloud function where you can select the same trigger used for scheduler.
 
 * Live:
 * Release:
