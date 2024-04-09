@@ -12,9 +12,7 @@ Some ways you can generalize the automated monitoring system to:
 
 ## Getting Started
 
-The code itself is relatively straightforward, comprising only three simple functions. However, the framework, highlighted details, and subsequent steps and solutions related to Google Cloud Platform (GCP) are where the true value lies. Hopefully, these aspects will provide valuable insights and guidance for your reference.
-
-Alright, let's dive into the coding part.
+The code itself is quite straightforward, consisting of only three simple functions. However, its complexity can vary significantly based on the intricacies of the web framework and your validation process. Meanwhile, the framework, highlighted details, and subsequent steps and solutions related to Google Cloud Platform (GCP) are where the true value lies. Hopefully, these aspects will provide valuable insights and guidance for your reference.
 
 ### Step1:
 
@@ -37,12 +35,14 @@ def send_email(sender_email, recipient_email, subject):
     msg['Subject'] = subject
     msg['From'] = sender_email
     msg['To'] = recipient_email
+
 # send email
     with smtplib.SMTP('smtp.gmail.com', 587) as server:
         server.starttls()
         server.login('your_app_username', 'your_app_password')
         server.sendmail(sender_email, recipient_email, msg.as_string())
 ```
+If you don't know the app username and password for your email, a detailed instruction is provided below in "Potential Obstacles And Solutions".
 
 ### Step3: combine 1st and 2nd step and test if you can recieve an email!
 ```
