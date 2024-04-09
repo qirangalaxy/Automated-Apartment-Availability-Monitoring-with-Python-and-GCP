@@ -103,7 +103,7 @@ def main():
         send_email("qiran@gmail.com","qiran@gmail.com","Available 1b $14xx at Rosecliffe Gardens II")
 ```
 
-So, if the Boolean indicator in **Step1** turns to "True" meaning desired room is now available, the designed email will be automatically sent; otherwise, no action will be taken.
+So, if the Boolean indicator in **Step1** turns to be "True" meaning desired room is now available, the designed email will be automatically sent; otherwise, no action will be taken.
 
 Here, we add the url mentioned above into the function we just built; and the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
