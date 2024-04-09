@@ -64,7 +64,7 @@ In default, gmail account does not have an app username or password ready to use
 4. Copy and past the password into the code where "your_app_password" located;
 5. The username I got is just the gmail name;
 
-   *Notice: App passwords are less secure than using up-to-date apps and services that use modern security standards.
+As listed on the site, Notice: App passwords are less secure than using up-to-date apps and services that use modern security standards.
 
 ### Google Cloud Functions: Fail to pass the test run?
 * First thing first, always make sure codes in main.py works well under local environment and nothing wrong with the code; any subtle error will lead to failure
