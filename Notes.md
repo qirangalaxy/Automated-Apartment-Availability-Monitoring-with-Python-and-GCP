@@ -34,7 +34,7 @@ $ Second example
 $ And keep this in mind
 ```
 
-### 3rd Step: combine 1st and 2nd step and 
+### 3rd Step: combine 1st and 2nd step and perform 
 ```
 def main():
     # The website address only used for illustration
