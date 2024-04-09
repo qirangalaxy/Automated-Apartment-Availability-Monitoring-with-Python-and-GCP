@@ -30,8 +30,9 @@ def send_email(sender_email, recipient_email, subject):
     import smtplib
     from email.mime.text import MIMEText
 
-# create email content
+    # create email main content
     msg = MIMEText('')
+    # what will be your email's subject
     msg['Subject'] = subject
     msg['From'] = sender_email
     msg['To'] = recipient_email
@@ -42,6 +43,7 @@ def send_email(sender_email, recipient_email, subject):
         server.login('your_app_username', 'your_app_password')
         server.sendmail(sender_email, recipient_email, msg.as_string())
 ```
+The second step allows sending an automatic email with certain content 
 If you don't know the app username and password for your email, a detailed instruction is provided below in "Potential Obstacles And Solutions".
 
 ### Step3: combine 1st and 2nd step and test if you can recieve an email!
