@@ -7,7 +7,7 @@ The code itself is relatively straightforward, comprising only three simple func
 
 ## Extended Applications
 
-The things you need before installing the software.
+Some ways you can generalize the automated monitoring system to:
 
 * You need this
 * And you need this
