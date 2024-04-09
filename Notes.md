@@ -14,14 +14,43 @@ Some ways you can generalize the automated monitoring system to:
 
 The code itself is quite straightforward, consisting of only three simple functions. However, its complexity can vary significantly based on the intricacies of the web framework and your validation process. Meanwhile, the framework, highlighted details, and subsequent steps and solutions related to Google Cloud Platform (GCP) are where the true value lies. Hopefully, these aspects will provide valuable insights and guidance for your reference.
 
-### Step1:
-
-A step by step guide that will tell you how to get the development environment up and running.
-
+### Step1: Check Availability of Your Desired Room Type
 ```
-$ First step
-$ Another step
-$ Final step
+def check_availability(url):
+    import requests
+    # implementation of common web scrapping
+    response = requests.get(url)
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(response.content, 'html.parser')
+```
+
+The code at this step is highly customized and should be adjusted accordingly, depending on the complexity of the web framework and the validation process. Also, different web scrapping techniques are available online, so I will not illustrate it in detail but focus more on how I explore and make use of the HTML structure.
+```
+    # find all room types and information related
+    room_elements = soup.find_all('div', class_='suite__column')
+    group_size = 8  # size for each group
+    found_desired_room = False  # Boolean var used later
+```
+
+In this particular example, since my target url (https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii)
+```
+    for i in range(0, len(room_elements), group_size):
+        group = room_elements[i:i+group_size]
+        link_element = group[1].find('a', class_='hyperlink-default floorplan-link')
+        room_name = link_element.text.strip()
+        # this is the name of my desired 1b room
+        if room_name == 'Agnes':
+            # check text after "Availability" is "not available" or "inquire today"/other
+            availability_span = group[-1].find('span', class_='suite__field-title', string='Availability').find_next('span')
+            availability_text = availability_span.text.strip()
+            if availability_text == 'not available':
+                return False
+            else:
+                found_desired_room = True  # find the desired room so that the boolean var turned to be True
+                break  # once any desired room found just end the loop
+
+    return found_desired_room
+
 ```
 
 ### Step2: SMTP email sending settings
