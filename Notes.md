@@ -48,7 +48,7 @@ Additional notes on how to deploy this on a live or release system. Explaining t
 ## Potential Obstacles And Solutions
 Here is a list of problems I faced and you might face during coding under local python and during Cloud Functions & Cloud Scheduler construction under GCP and actions I took to solve them.
 
-### Python Code: Can't find your gmail app username and password?
+### main.py: Can't find your gmail app username and password?
 *Work under gmail settings, other email providers may have different steps to get username and password
 ```
 $Take gmail as example
