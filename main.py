@@ -3,23 +3,23 @@ def check_availability(url):
     response = requests.get(url)
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(response.content, 'html.parser')
-    # 找到所有房型信息的父元素
+    # find all room types and information related
     room_elements = soup.find_all('div', class_='suite__column')
-    group_size = 8  # 每个组的大小
-    found_desired_room = False  # 标志变量，表示是否找到符合条件的房间
+    group_size = 8  # size for each group
+    found_desired_room = False  # Boolean var used later
     for i in range(0, len(room_elements), group_size):
         group = room_elements[i:i+group_size]
         link_element = group[1].find('a', class_='hyperlink-default floorplan-link')
         room_name = link_element.text.strip()
         if room_name == 'Crossing':
-            # 查找包含“Availability”标题的span标签
+            # check text after "Availability" is "not available" or "inquire today"/other
             availability_span = group[-1].find('span', class_='suite__field-title', string='Availability').find_next('span')
             availability_text = availability_span.text.strip()
             if availability_text == 'not available':
                 return False
             else:
-                found_desired_room = True  # 找到符合条件的房间，将标志变量设置为True
-                break  # 找到满足条件的房间后停止循环
+                found_desired_room = True  # find the desired room so that the boolean var turned to be True
+                break  # once any desired room found just end the loop
 
     return found_desired_room
 
