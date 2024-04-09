@@ -34,13 +34,13 @@ $ Second example
 $ And keep this in mind
 ```
 
-### 3rd Step: combine 1st and 2nd step and perform 
+### Step3: combine 1st and 2nd step and test if you can get an email!
 ```
 def main():
-    # The website address only used for illustration
     if check_availability("https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii"):
         send_email("qiran@gmail.com","qiran@gmail.com","Available Studio $13xx at LondonApartment")
 ```
+The example code provided a London apartment webpage that exhibits availability information for different types of rooms
 
 ## :clipboard:Suggestions Along the Way
 1. Most importantly, always check if scrapping certain websites is allowed; you can check either from robots.txt or using API instead.
