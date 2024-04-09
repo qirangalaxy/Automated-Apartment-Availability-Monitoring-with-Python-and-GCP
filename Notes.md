@@ -1,10 +1,10 @@
 # :mailbox_with_mail:Automated Apartment Availability Monitoring with Python and Google Cloud Platform (GCP) 
 
-A short description about the project and/or client.
+One day afternoon, I was looking for apartment to stay for my remaining school year, browsing through all apartment real estates, choosing the best one and also my most desired suite type, and checking if I can apply for it immediately. Unfortunately, for the following few days, I checked frequently the websites to get the first place for the application once it opened but the it showed unavailable for all the time by opening browser, typing apartment name, clicking multiple times to arrive at the right place, scrolling down and passing through all suite types to see the availability of my most desired room type on the bottom. To save time and my mood, I spent another day building this automated monitoring system consisting of a python code and connections with cloud scheduler.
 
 ## Extended Applications
 
-Some ways you can generalize the automated monitoring system to:
+Except for applying the whole case for apartment checking, the idea can be also generalized to other fields:
 
 * You need this
 * And you need this
@@ -106,6 +106,8 @@ def main():
 So, if the Boolean indicator in **Step1** turns to be "True" meaning desired room is now available, the designed email will be automatically sent; otherwise, no action will be taken.
 
 Here, we add the url mentioned above into the function we just built; and the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
+
+## 
 
 ## Workflows On GCP
 1. After having the code, create google cloud scheduler first, including creation of a trigger (I used Pub/Sub).
