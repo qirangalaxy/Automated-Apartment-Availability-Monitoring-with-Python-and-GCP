@@ -1,6 +1,6 @@
 # :mailbox_with_mail:Automated Apartment Availability Monitoring with Python and Google Cloud Platform (GCP) 
 
-One day afternoon, I was looking for apartment to stay for my remaining school year, browsing through all apartment real estates, choosing the best one and also my most desired suite type, and checking if I can apply for it immediately. Unfortunately, for the following few days, I checked frequently the websites to get the first place for the application once it opened but the it showed unavailable for all the time by opening browser, typing apartment name, clicking multiple times to arrive at the right place, scrolling down and passing through all suite types to see the availability of my most desired room type on the bottom. To save time and my mood, I spent another day building this automated monitoring system consisting of a python code and connections with cloud scheduler.
+One afternoon, I was looking for an apartment to stay in for the remainder of my school year, browsing through all apartment real estates, choosing the best one and also my most desired suite type, and checking if I can apply for it immediately. Unfortunately, for the following few days, I checked the websites frequently, just hoping to secure my application as soon as it opened, but it showed as unavailable every time. I repeated countless times of opening different websites, typing apartment name, clicking multiple times to arrive at the right place, scrolling down and passing through all suite types to see the availability of my most desired room type on the bottom. To save time and my mood, I spent another day building this automated monitoring system consisting of a python code and connections with cloud scheduler.
 
 ## Extended Applications
 
@@ -107,7 +107,7 @@ So, if the Boolean indicator in **Step1** turns to be "True" meaning desired roo
 
 Here, we add the url mentioned above into the function we just built; and the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
-## Running a Python script periodically at back end
+## Running A Python Script Periodically At Back End
 I came up with three ways how you can achieve automatic performance of certain code and implemented the one that I think most convenient for me. You can try the other two if those are better fit for you!
 
 1. 
