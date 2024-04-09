@@ -47,7 +47,7 @@ In addition, a boolean parameter, _found_desired_room_, is created to indicate i
         room_name = link_element.text.strip()
 ```
 
-Each group is identified with having 7 elements. The room name can be extracted by searching through the first element where name of room is located between <a class="hyperlink-default floorplan-link" ...> & <a>.
+Each group, indicating one room type, is identified with having 7 consecutive elements. The room name can be extracted by searching through the first element where name of room is located between <a class="hyperlink-default floorplan-link" ...> & <a>.
 
 ```
         # this is the name of my desired 1b room; you can add more names or modify the if statement for your own intention
@@ -65,7 +65,7 @@ Each group is identified with having 7 elements. The room name can be extracted 
 
 ```
 
-A for loop is used for checking every room, and if the name of the room equals to the name of your desired room, it will check for the text under the field "Availability" indicating whether it is "not available" or "inquiry today" (or any other changes). 
+If the room is what we desired, we will go to verify its availability, or the boolean parameter goes directly to be "False". By applying similar logic, we can extract the text under "Availability" and assign _found_desired_room_ to be "False" if it is "not available", or it returns "True". The for loop will check every single room listed on the web page and will stop immediately if the boolean indicator turned to be "True". 
 
 <img src = "https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/2d3aa2ff-1154-4fdc-a94f-4c21a076322c" width=30% height=30%>
 <img src = "https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/2dbdb241-e2b2-48a5-926b-ba603301566c" width=25% height=30%>
@@ -100,7 +100,9 @@ def main():
         send_email("qiran@gmail.com","qiran@gmail.com","Available 1b $14xx at Rosecliffe Gardens II")
 ```
 
-The example code provided a webpage displaying the availability information for different types of rooms at a specific London apartment complex. Here, the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
+So, if the boolean indicator in **Step1** turns to "True" meaning desired room is now available, the designed email will be automatically sent; otherwise, no action will be taken.
+
+Here, we add the url mentioned above into the function we just built; and the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
 ## Workflows On GCP
 1. After having the code, create google cloud scheduler first, including creation of a trigger (I used Pub/Sub).
