@@ -76,8 +76,6 @@ requests == 2.31.0
 beautifulsoup4
 ```
 
-### Cloud Scheduler: 
-
 ## Additional Documentation and Acknowledgments
 
 * Project folder on server:
