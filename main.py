@@ -11,7 +11,8 @@ def check_availability(url):
         group = room_elements[i:i+group_size]
         link_element = group[1].find('a', class_='hyperlink-default floorplan-link')
         room_name = link_element.text.strip()
-        if room_name == 'Crossing':
+        # this is the name of my desired 1b room
+        if room_name == 'Agnes':
             # check text after "Availability" is "not available" or "inquire today"/other
             availability_span = group[-1].find('span', class_='suite__field-title', string='Availability').find_next('span')
             availability_text = availability_span.text.strip()
@@ -41,7 +42,8 @@ def send_email(sender_email, recipient_email, subject):
         server.sendmail(sender_email, recipient_email, msg.as_string())
 
 def main():
-    if check_availability("https://www.drewloholdings.com/apartments-for-rent/rio"):
+    # The website address only used for illustration
+    if check_availability("https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii"):
         send_email("lala.zqrno1@gmail.com","lala.zqrno1@gmail.com","Available Studio $13xx at LondonApartment")
 
 main()
