@@ -23,23 +23,31 @@ $ Another step
 $ Final step
 ```
 
-### Usage
-
-A few examples of useful commands and/or tasks.
-
+### Step2: send email using SMTP 
 ```
-$ First example
-$ Second example
-$ And keep this in mind
+def send_email(sender_email, recipient_email, subject):
+    import smtplib
+    from email.mime.text import MIMEText
+
+$ create email content
+    msg = MIMEText('')
+    msg['Subject'] = subject
+    msg['From'] = sender_email
+    msg['To'] = recipient_email
+$ send email
+    with smtplib.SMTP('smtp.gmail.com', 587) as server:
+        server.starttls()
+        server.login('your_app_username', 'your_app_password')
+        server.sendmail(sender_email, recipient_email, msg.as_string())
 ```
 
-### Step3: combine 1st and 2nd step and test if you can get an email!
+### Step3: combine 1st and 2nd step and test if you can recieve an email!
 ```
 def main():
     if check_availability("https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii"):
         send_email("qiran@gmail.com","qiran@gmail.com","Available 1b $14xx at Rosecliffe Gardens II")
 ```
-The example code provided a webpage displaying the availability information for different types of rooms at a specific London apartment complex. Here, the sender and recipient email addresses are assigned to be both my email addresses (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
+The example code provided a webpage displaying the availability information for different types of rooms at a specific London apartment complex. Here, the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
 ## :clipboard:Workflows & Suggestions Along the Way
 1. Most importantly, always check if scrapping certain websites is allowed; you can check either from robots.txt or using API instead.
