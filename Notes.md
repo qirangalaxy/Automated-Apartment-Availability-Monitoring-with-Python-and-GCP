@@ -13,7 +13,11 @@ Some ways you can generalize the automated monitoring system to:
 * And you need this
 * Oh, and don't forget this
 
-### Installation
+## Python Code Explaination
+
+Alright, let's dive into the coding part.
+
+### Step1:
 
 A step by step guide that will tell you how to get the development environment up and running.
 
