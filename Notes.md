@@ -1,6 +1,6 @@
 # :mailbox_with_mail:Automated Apartment Availability Monitoring with Python and Google Cloud Platform (GCP) 
 
-One afternoon, I was looking for an apartment to stay in for the remainder of my school year, browsing through all apartment real estates, choosing the best one and also my most desired suite type, and checking if I can apply for it immediately. Unfortunately, for the following few days, I checked the websites frequently, just hoping to secure my application as soon as it opened, but it showed as unavailable every time. I repeated countless times of opening different websites, typing apartment name, clicking multiple times to arrive at the right place, scrolling down and passing through all suite types to see the availability of my most desired room type on the bottom. To save time and my mood, I spent another day building this automated monitoring system consisting of a python code and connections with cloud scheduler.
+One afternoon, I was looking for an apartment to stay in for the remainder of my school year, browsing through all apartment real estate, choosing the best one and also my most desired suite type, and checking if I could apply for it immediately. Unfortunately, for the following few days, I checked the websites frequently, just hoping to secure my application as soon as it opened, but it showed as unavailable every time. I repeated countless times of opening different websites, typing apartment name, clicking multiple times to arrive at the right place, scrolling down and passing through all suite types to see the availability of my most desired room type on the bottom. To save time and my mood, I spent another day building this automated monitoring system that utilizes a python code integrates it with cloud scheduler.
 
 ## Extended Applications
 
@@ -33,7 +33,7 @@ Again, the code at this step is highly customized and should be adjusted accordi
     found_desired_room = False  # Boolean var used later
 ```
 
-In this particular example, since my target url (https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii) has certain HTML structure where information about all room types contained in the class of "suite__column". 
+In this particular example, since my target URL (https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii) has certain HTML structure where information about all room types contained in the class of "suite__column". 
 
 Each room type consists of 7 elements separated by "suite__column" (refer the graph below), including a hyperlink of floorplan picture and the suite name, an optional link to a virtual tour, a string of "Bedrooms" and number of bedrooms the suite has, a string of "Baths" and number of baths it has, a string of "Sq.Ft." and value indicating the area, a string of "Rent" and the range, a string of "Availability" and a string of "not available". 
 ![elements](https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/4cdfa295-a4ed-4624-82d7-9d3af5048548)
@@ -50,7 +50,7 @@ In addition, a Boolean parameter, _found_desired_room_, is created to indicate i
         room_name = link_element.text.strip()
 ```
 
-Each group, indicating one room type, consists of 7 consecutive elements; thus the loop iterates through each group, or each suite, at each time. The room name can be extracted by searching through the first element where name of room is located between <a class="hyperlink-default floorplan-link" ...> & <a>.
+Each group, indicating one room type, consists of 7 consecutive elements; thus, the loop iterates through each group, or each suite, at each time. The room name can be extracted by searching through the first element where name of room is located between <a class="hyperlink-default floorplan-link" ...> & <a>.
 
 ```
         # this is the name of my desired 1b room; you can add more names or modify the if statement for your own intention
@@ -92,7 +92,7 @@ def send_email(sender_email, recipient_email, subject):
         server.sendmail(sender_email, recipient_email, msg.as_string())
 ```
 
-The second step performs the action of sending an automatic notification email with certain subject from a specified sender towards a specified recipient. The content of email is highly personalised; the number parameter inside smtplib.SMTP() is a common used submission port. More information regarding SMTP can be referred at https://docs.python.org/3/library/smtplib.html. 
+The second step performs the action of sending an automatic notification email with certain subject from a specified sender towards a specified recipient. The content of email is highly personalized; the number parameter inside smtplib.SMTP() is a common used submission port. More information regarding SMTP can be referred at https://docs.python.org/3/library/smtplib.html. 
 
 If you don't know the app username and password for your email, a detailed instruction is provided below in "Potential Obstacles And Solutions".
 
@@ -105,7 +105,7 @@ def main():
 
 So, if the Boolean indicator in **Step1** turns to be "True" meaning desired room is now available, the designed email will be automatically sent; otherwise, no action will be taken.
 
-Here, we add the url mentioned above into the function we just built; and the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
+Here, we add the URL mentioned above into the function we just built; and the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
 ## Running A Python Script Periodically At Back End
 I came up with three ways how you can achieve automatic performance of certain code and implemented the one that I think most convenient for me. You can try the other two if those are better fit for you!
@@ -123,13 +123,13 @@ I came up with three ways how you can achieve automatic performance of certain c
 3. You can repeat the previous step to generate several functions and assign them to the same trigger; in this case, since webpages of all apartments from this real estate have similar web structures, a little revision to the main.py is needed to have different functions, allowing you to monitor desired rooms from several apartments at the same time.
 
 ## :clipboard:Suggestions Along the Way
-* Most importantly, always check if scrapping certain websites is allowed; you can check either from robots.txt or using API instead.
+* Most importantly, always and always check if scrapping certain websites is allowed; you can check either from robots.txt or using API instead.
 * Before writing the python code, think fully the logic and break down the task into several key phases.
-* Konwing the HTML structure well is the key to extract desired information.
-* When you don't know how to set up parameters at GCP, just take time to read through necessary documents it provided, which are all pretty clear, just set besides each field.
+* Kowning the HTML structure well is the key to extract desired information.
+* When you don't know how to set up parameters at GCP, just take time to read through necessary documents it provided, which are all pretty clear, just set beside each field.
 * If you want to check if the code can be run successfully, you can search for the available room first and see if you get an email.
-* Similarly, if you want to verify if you set up successful the scheduler with linked functions, perform checking availability for available rooms first and see if you get an email at scheduled time.
-* Import libraries right before using it (as demostrated in the python code); this is a suggestion that I saw from a reddit comment.
+* Similarly, if you want to verify if you set up successfully the scheduler with linked functions, perform checking availability for available rooms first and see if you get an email at scheduled time.
+* Import libraries right before using it (as demonstrated in the python code); this is a suggestion that I saw from a reddit comment.
 
 ## :construction:Potential Obstacles And Solutions
 Here is a list of problems I faced and you might face during coding under local python and during Cloud Functions & Cloud Scheduler construction under GCP and actions I took to solve them.
@@ -148,15 +148,15 @@ In default, gmail account does not have an app username or password ready to use
 1. Go to "Manage your Google Account";
 2. On the top of the page, search "App Passwords";
 3. Add a name for it and click create;
-4. Copy and past the password into the code where "your_app_password" located;
+4. Copy and paste the password into the code where "your_app_password" located;
 5. The username I got is just the gmail name;
 
 As listed on the site, Notice: App passwords are less secure than using up-to-date apps and services that use modern security standards.
 
 ### Google Cloud Functions: Fail to pass the test run?
-* First thing first, always make sure codes in main.py works well under local environment and nothing wrong with the code; any subtle error will lead to failure
+* First thing first, make sure codes in main.py works well under local environment and nothing wrong with the code; any subtle error will lead to failure
 * Check if the "Entry point" is the first function/step your whole coding starts with; for example, here, you defined three functions, you should not just leave them there but add another code of main() to perform the whole task thus "Entry point" = main
-* Check if all extra libraries and their versions are written under requirements.txt; Specifically under this apartment case, the version of beautifulsoup4 does not need to be specified as it works well when just leave it there thus it looks like:
+* Check if all extra libraries and their versions are written under requirements.txt; Specifically, under this apartment case, the version of beautifulsoup4 does not need to be specified as it works well when just leave it there thus it looks like:
 ```
 # requirements.txt
 functions-framework==3.*
