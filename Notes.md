@@ -13,7 +13,7 @@ Some ways you can generalize the automated monitoring system to:
 * And you need this
 * Oh, and don't forget this
 
-## Python Code Explaination
+## Basic Python Code Explaination
 
 Alright, let's dive into the coding part.
 
@@ -53,7 +53,7 @@ def main():
 ```
 The example code provided a webpage displaying the availability information for different types of rooms at a specific London apartment complex. Here, the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
-## :clipboard:Workflows On GCP & Suggestions Along the Way
+## Workflows On GCP & Suggestions Along the Way
 1. Most importantly, always check if scrapping certain websites is allowed; you can check either from robots.txt or using API instead.
 2. Before writing the python code, think fully the logic and break down the task into several key phases.
 3. If you want to check if the code can be run successfully, you can search for the available room first and see if you get an email.
