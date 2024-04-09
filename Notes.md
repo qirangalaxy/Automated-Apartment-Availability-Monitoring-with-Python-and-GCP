@@ -40,7 +40,7 @@ Each room type consists of 7 elements separated by "suite__column" (refer the gr
 
 
 
-In addition, a boolean parameter, _found_desired_room_, is created to indicate if a desired room is found or not, taken as outcome value.
+In addition, a Boolean parameter, _found_desired_room_, is created to indicate if a desired room is found or not, taken as outcome value.
 
 
 ```
@@ -68,7 +68,7 @@ Each group, indicating one room type, consists of 7 consecutive elements; thus t
 
 ```
 
-If the room is what we desired, we will go to verify its availability, or the Boolean parameter goes directly to be "False" and the loop passes this group continuing check the condition for the next group. By applying similar logic, we can extract the text under "Availability" and assign _found_desired_room_ to be "False" if it is "not available", or it returns "True". The for loop will check every single room listed on the web page and will stop immediately if the boolean indicator turned to be "True". 
+If the room is what we desired, we will go to verify its availability, or the Boolean parameter goes directly to be "False" and the loop passes this group continuing check the condition for the next group. By applying similar logic, we can extract the text under "Availability" and assign _found_desired_room_ to be "False" if it is "not available", or it returns "True". The for loop will check every single room listed on the web page and will stop immediately if the Boolean indicator turned to be "True". 
 
 <img src = "https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/2d3aa2ff-1154-4fdc-a94f-4c21a076322c" width=30% height=30%>
 <img src = "https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/2dbdb241-e2b2-48a5-926b-ba603301566c" width=25% height=30%>
@@ -103,7 +103,7 @@ def main():
         send_email("qiran@gmail.com","qiran@gmail.com","Available 1b $14xx at Rosecliffe Gardens II")
 ```
 
-So, if the boolean indicator in **Step1** turns to "True" meaning desired room is now available, the designed email will be automatically sent; otherwise, no action will be taken.
+So, if the Boolean indicator in **Step1** turns to "True" meaning desired room is now available, the designed email will be automatically sent; otherwise, no action will be taken.
 
 Here, we add the url mentioned above into the function we just built; and the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
