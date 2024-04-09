@@ -3,8 +3,7 @@
 A short description about the project and/or client.
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The code itself is relatively straightforward, comprising only three simple functions. However, the framework, highlighted details, and subsequent steps related to Google Cloud Platform (GCP) are where the true value lies. Hopefully, these aspects will provide valuable insights and guidance for your reference.
 
 ## Prerequisites
 
