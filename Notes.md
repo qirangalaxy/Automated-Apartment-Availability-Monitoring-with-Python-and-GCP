@@ -37,16 +37,16 @@ In this particular example, since my target url (https://www.drewloholdings.com/
 
 Each room type consists of 7 elements separated by "suite__column" (refer the graph below), including a hyperlink of floorplan picture and the suite name, an optional link to a virtual tour, a string of "Bedrooms" and number of bedrooms the suite has, a string of "Baths" and number of baths it has, a string of "Sq.Ft." and value indicating the area, a string of "Rent" and the range, a string of "Availability" and a string of "not available". 
 
-In addition, a boolean, _found_desired_room_ is created to indicate if a desired room is found or not, taken as outcome value.
+In addition, a boolean parameter, _found_desired_room_, is created to indicate if a desired room is found or not, taken as outcome value.
 
 
 ```
     for i in range(1, len(room_elements), group_size):
 
-        # make every group contains all information for one room type
+        # make every group contains all (7) information for one room type
         group = room_elements[i:i+group_size]
 
-        # find room name by searching 
+        # find room name by searching the first element where name of room is located btw <a class="hyperlink-default floorplan-link" ...> & <a>
         link_element = group[0].find('a', class_='hyperlink-default floorplan-link')
         room_name = link_element.text.strip()
 
