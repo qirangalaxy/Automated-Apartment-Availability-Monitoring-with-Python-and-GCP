@@ -42,14 +42,14 @@ In addition, a boolean parameter, _found_desired_room_, is created to indicate i
 
 ```
     for i in range(1, len(room_elements), group_size):
-
-        # make every group contains all (7) information for one room type
         group = room_elements[i:i+group_size]
-
-        # find room name by searching the first element where name of room is located btw <a class="hyperlink-default floorplan-link" ...> & <a>
         link_element = group[0].find('a', class_='hyperlink-default floorplan-link')
         room_name = link_element.text.strip()
+```
 
+Each group is identified with having 7 elements. The room name can be extracted by searching through the first element where name of room is located between <a class="hyperlink-default floorplan-link" ...> & <a>.
+
+```
         # this is the name of my desired 1b room; you can add more names or modify the if statement for your own intention
         if room_name == 'Agnes':
             # get text underneath Availability: availability appears in the last element 
