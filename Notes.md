@@ -5,7 +5,7 @@ A short description about the project and/or client.
 ## Getting Started
 The code itself is relatively straightforward, comprising only three simple functions. However, the framework, highlighted details, and subsequent steps related to Google Cloud Platform (GCP) are where the true value lies. Hopefully, these aspects will provide valuable insights and guidance for your reference.
 
-## Prerequisites
+## Extended Applications
 
 The things you need before installing the software.
 
