@@ -42,7 +42,9 @@ def send_email(sender_email, recipient_email, subject):
         server.login('your_app_username', 'your_app_password')
         server.sendmail(sender_email, recipient_email, msg.as_string())
 ```
-The second step performs the action of sending an automatic notification email with certain subject from a specified sender towards a specified recipient. The content of email is highly personalised; the number inside smtplib.SMTP() is a common used submission port. More information regarding SMTP can be referred at https://docs.python.org/3/library/smtplib.html. 
+
+The second step performs the action of sending an automatic notification email with certain subject from a specified sender towards a specified recipient. The content of email is highly personalised; the number parameter inside smtplib.SMTP() is a common used submission port. More information regarding SMTP can be referred at https://docs.python.org/3/library/smtplib.html. 
+
 If you don't know the app username and password for your email, a detailed instruction is provided below in "Potential Obstacles And Solutions".
 
 ### Step3: combine 1st and 2nd step and test if you can recieve an email!
@@ -51,6 +53,7 @@ def main():
     if check_availability("https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii"):
         send_email("qiran@gmail.com","qiran@gmail.com","Available 1b $14xx at Rosecliffe Gardens II")
 ```
+
 The example code provided a webpage displaying the availability information for different types of rooms at a specific London apartment complex. Here, the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
 ## Workflows On GCP
@@ -82,6 +85,7 @@ with smtplib.SMTP('smtp.gmail.com', 587) as server:
   server.login('your_app_username', 'your_app_password')
   server.sendmail(sender_email, recipient_email, msg.as_string())
 ```
+
 In default, gmail account does not have an app username or password ready to use; you can follow the steps to get your own set of username and auto-generated password:
 1. Go to "Manage your Google Account";
 2. On the top of the page, search "App Passwords";
