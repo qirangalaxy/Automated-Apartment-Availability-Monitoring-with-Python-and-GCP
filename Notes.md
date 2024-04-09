@@ -43,7 +43,7 @@ Additional notes on how to deploy this on a live or release system. Explaining t
 2. Before writing the python code, think fully the logic and break down the task into several key phases.
 3. After having the code, create google cloud scheduler first, including creation of trigger (I used Pub/Sub), then generate google cloud functions where you can select the same trigger used for scheduler.
 4. When you don't know how to set up parameters at GCP, just take time to read through necessary documents it provided, which are all pretty clear, just set besides each field.
-5. import libraries right before using it (as demostrated in the python code)
+5. Import libraries right before using it (as demostrated in the python code); this is a suggestion that I saw from a reddit comment.
 
 ## Potential Obstacles And Solutions
 Here is a list of problems I faced and you might face during coding under local python and during Cloud Functions & Cloud Scheduler construction under GCP and actions I took to solve them.
