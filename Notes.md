@@ -39,7 +39,7 @@ def main():
     if check_availability("https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii"):
         send_email("qiran@gmail.com","qiran@gmail.com","Available 1b $14xx at Rosecliffe Gardens II")
 ```
-The example code provided a London apartment webpage that exhibits availability information for different types of rooms. Here, the sender and recipient email addresses are assigned to be both my email addresses (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
+The example code provided a webpage displaying the availability information for different types of rooms at a specific London apartment complex. Here, the sender and recipient email addresses are assigned to be both my email addresses (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
 ## :clipboard:Workflows & Suggestions Along the Way
 1. Most importantly, always check if scrapping certain websites is allowed; you can check either from robots.txt or using API instead.
