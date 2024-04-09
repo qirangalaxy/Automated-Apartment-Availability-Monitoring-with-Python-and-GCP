@@ -47,11 +47,24 @@ Additional notes on how to deploy this on a live or release system. Explaining t
 
 ## Potential Obstacles And Solutions
 Here is a list of problems I faced and you might face during coding under local python and during Cloud Functions & Cloud Scheduler construction under GCP and actions I took to solve them.
-### Python Code: 
-* Master:
-* Feature:
-* Bugfix:
-* etc...
+### Python Code: Can't find your gmail app username and password?
+*Work under gmail settings, other email providers may have different steps to get username and password
+```
+$Take gmail as example
+with smtplib.SMTP('smtp.gmail.com', 587) as server:
+  server.starttls()
+  server.login('your_app_username', 'your_app_password')
+  server.sendmail(sender_email, recipient_email, msg.as_string())
+```
+In default, gmail account does not have an app username or password ready to use; you can follow the steps to get your own set of username and auto-generated password:
+1. Go to "Manage your Google Account";
+2. On the top of the page, search "App Passwords";
+3. Add a name for it and click create;
+4. Copy and past the password into the code where "your_app_password" located;
+5. The username I got is just the gmail name.
+*Notice: App passwords are less secure than using up-to-date apps and services that use modern security standards.
+
+
 ### Google Cloud Functions: Fail to pass the test run?
 * First thing first, always make sure codes in main.py works well under local environment and nothing wrong with the code; any subtle error will lead to failure
 * Check if the "Entry point" is the first function/step your whole coding starts with; for example, here, you defined three functions, you should not just leave them there but add another code of main() to perform the whole task thus "Entry point" = main
