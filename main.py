@@ -9,7 +9,7 @@ def check_availability(url):
     found_desired_room = False  # Boolean var used later
     for i in range(1, len(room_elements), group_size):
         group = room_elements[i:i+group_size]
-        link_element = group[1].find('a', class_='hyperlink-default floorplan-link')
+        link_element = group[0].find('a', class_='hyperlink-default floorplan-link')
         room_name = link_element.text.strip()
         # this is the name of my desired 1b room
         if room_name == 'Agnes':
