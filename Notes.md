@@ -41,7 +41,7 @@ def main():
 ```
 The example code provided a London apartment webpage that exhibits availability information for different types of rooms. Here, The sender and recepient email addresses are assigned to be both my email addresses (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
-## :clipboard:Suggestions Along the Way
+## :clipboard:Workflows & Suggestions Along the Way
 1. Most importantly, always check if scrapping certain websites is allowed; you can check either from robots.txt or using API instead.
 2. Before writing the python code, think fully the logic and break down the task into several key phases.
 3. If you want to check if the code can be run successfully, you can search for the available room first and see if you get an email.
