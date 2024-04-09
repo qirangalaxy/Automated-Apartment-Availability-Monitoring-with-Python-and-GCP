@@ -42,6 +42,6 @@ def send_email(sender_email, recipient_email, subject):
 
 def main():
     if check_availability("https://www.drewloholdings.com/apartments-for-rent/rio"):
-        send_email("lala.zqrno1@gmail.com","lala.zqrno1@gmail.com","Available Studio $13xx at SOUTH CARRIAGE PLACE")
+        send_email("lala.zqrno1@gmail.com","lala.zqrno1@gmail.com","Available Studio $13xx at LondonApartment")
 
 main()
