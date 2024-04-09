@@ -1,4 +1,4 @@
-# Automated Apartment Availability Monitoring with Python and GCP
+:point_right:# Automated Apartment Availability Monitoring with Python and GCP
 
 A short description about the project and/or client.
 
