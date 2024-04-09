@@ -55,7 +55,11 @@ Here is a list of problems I faced during coding under local python and during C
 * Bugfix:
 * etc...
 #### Cloud Functions Creation in GCP
-##### 1. Fail to pass the test run.
+##### 1. Fail to pass the test run?
+* Check if all necessary libraries are listed in the requirements.txt
+* Make sure codes in main.py works well firstly under local environment and nothing wrong with the code
+* Check if the "Entry point" is the first function/step your whole coding starts with
+* Specifically under the example case, within the requirements.txt, 
 
 #### CLoud Scheduler Creation in GCP
 
