@@ -1,4 +1,4 @@
-# :mailbox_with_mail:Automated Apartment Availability Monitoring with Python and GCP 
+# :mailbox_with_mail:Automated Apartment Availability Monitoring with Python and Google Cloud Platform (GCP) 
 
 A short description about the project and/or client.
 
