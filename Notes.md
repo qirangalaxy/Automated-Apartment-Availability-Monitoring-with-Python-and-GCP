@@ -108,6 +108,9 @@ So, if the Boolean indicator in **Step1** turns to be "True" meaning desired roo
 Here, we add the url mentioned above into the function we just built; and the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
 ## Running a Python script periodically at back end
+I came up with three ways how you can achieve automatic performance of certain code and implemented the one that I think most convenient for me. You can try the other two if those are better fit for you!
+
+1. 
 
 
 ## Workflows On GCP
