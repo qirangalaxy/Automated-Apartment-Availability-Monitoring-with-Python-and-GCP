@@ -54,9 +54,11 @@ Here is a list of problems I faced and you might face during coding under local 
 * First thing first, always make sure codes in main.py works well under local environment and nothing wrong with the code
 * Check if the "Entry point" is the first function/step your whole coding starts with; for example, here, you defined three functions, you should not just leave them there but add another code of main() to perform the whole task thus "Entry point" = main
 * Check if all extra libraries and their versions are written under requirements.txt; Specifically under this apartment case, the version of beautifulsoup4 does not need to be specified as it works well when just leave it there thus it looks like:
+```
   1. functions-framework==3.*
   2. requests == 2.31.0
   3. beautifulsoup4
+```
 
 #### CLoud Scheduler: 
 
