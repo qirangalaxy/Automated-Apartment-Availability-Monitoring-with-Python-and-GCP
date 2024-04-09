@@ -2,9 +2,6 @@
 
 A short description about the project and/or client.
 
-## Getting Started
-The code itself is relatively straightforward, comprising only three simple functions. However, the framework, highlighted details, and subsequent steps and solutions related to Google Cloud Platform (GCP) are where the true value lies. Hopefully, these aspects will provide valuable insights and guidance for your reference.
-
 ## Extended Applications
 
 Some ways you can generalize the automated monitoring system to:
@@ -13,7 +10,9 @@ Some ways you can generalize the automated monitoring system to:
 * And you need this
 * Oh, and don't forget this
 
-## Basic Python Code Explaination
+## Getting Started
+
+The code itself is relatively straightforward, comprising only three simple functions. However, the framework, highlighted details, and subsequent steps and solutions related to Google Cloud Platform (GCP) are where the true value lies. Hopefully, these aspects will provide valuable insights and guidance for your reference.
 
 Alright, let's dive into the coding part.
 
