@@ -58,7 +58,9 @@ In this particular example, since my target url (https://www.drewloholdings.com/
 
 ```
 
-A for loop is used for checking every room, and if the name of the room equals to the name of your desired room, 
+A for loop is used for checking every room, and if the name of the room equals to the name of your desired room, it will check for the text under the field "Availability" indicating whether it is "not available" or "inquiry today" (or any other changes). 
+![image](https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/2d3aa2ff-1154-4fdc-a94f-4c21a076322c)
+![image](https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/2dbdb241-e2b2-48a5-926b-ba603301566c)
 
 ### Step2: SMTP email sending settings
 ```
