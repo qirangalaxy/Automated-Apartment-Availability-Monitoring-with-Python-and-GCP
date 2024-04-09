@@ -2,14 +2,6 @@
 
 One afternoon, I was looking for an apartment to stay in for the remainder of my school year, browsing through all apartment real estate, choosing the best one and also my most desired suite type, and checking if I could apply for it immediately. Unfortunately, for the following few days, I checked the websites frequently, just hoping to secure my application as soon as it opened, but it showed as unavailable every time. I repeated countless times of opening different websites, typing apartment name, clicking multiple times to arrive at the right place, scrolling down and passing through all suite types to see the availability of my most desired room type on the bottom. To save time and my mood, I spent another day building this automated monitoring system that utilizes a python code integrates it with cloud scheduler, which checks the availability of my desired suite type every six hours and notifies me by an email if it becomes available.
 
-## Extended Applications
-
-Except for applying the whole case for apartment checking, the idea can be also generalized to other fields:
-
-* You need this
-* And you need this
-* Oh, and don't forget this
-
 ## Getting Started
 
 The code itself is quite straightforward, consisting of only three simple functions. However, its complexity can vary significantly based on the intricacies of the web framework and your validation process. Meanwhile, the framework, highlighted details, and subsequent steps and solutions related to Google Cloud Platform (GCP) are where the true value lies. Hopefully, these aspects will provide valuable insights and guidance for your reference.
