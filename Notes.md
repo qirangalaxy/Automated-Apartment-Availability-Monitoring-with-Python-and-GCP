@@ -42,7 +42,7 @@ def send_email(sender_email, recipient_email, subject):
         server.login('your_app_username', 'your_app_password')
         server.sendmail(sender_email, recipient_email, msg.as_string())
 ```
-The second step performs the action of sending an automatic notification email with certain subject from a specified sender towards a specified recipient. The content of 
+The second step performs the action of sending an automatic notification email with certain subject from a specified sender towards a specified recipient. The content of email is highly personalised; the number inside smtplib.SMTP() is a common used submission port. More information regarding SMTP can be referred at https://docs.python.org/3/library/smtplib.html. 
 If you don't know the app username and password for your email, a detailed instruction is provided below in "Potential Obstacles And Solutions".
 
 ### Step3: combine 1st and 2nd step and test if you can recieve an email!
