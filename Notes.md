@@ -23,18 +23,18 @@ $ Another step
 $ Final step
 ```
 
-### Step2: send email using SMTP 
+### Step2: SMTP email sending settings
 ```
 def send_email(sender_email, recipient_email, subject):
     import smtplib
     from email.mime.text import MIMEText
 
-$ create email content
+# create email content
     msg = MIMEText('')
     msg['Subject'] = subject
     msg['From'] = sender_email
     msg['To'] = recipient_email
-$ send email
+# send email
     with smtplib.SMTP('smtp.gmail.com', 587) as server:
         server.starttls()
         server.login('your_app_username', 'your_app_password')
@@ -64,7 +64,7 @@ Here is a list of problems I faced and you might face during coding under local 
 ### main.py: Can't find your gmail app username and password?
 *Work under gmail settings, other email providers may have different steps to get username and password
 ```
-$Take gmail as example
+#Take gmail as example
 with smtplib.SMTP('smtp.gmail.com', 587) as server:
   server.starttls()
   server.login('your_app_username', 'your_app_password')
