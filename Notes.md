@@ -6,7 +6,7 @@ A short description about the project and/or client.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+## Prerequisites
 
 The things you need before installing the software.
 
@@ -24,7 +24,7 @@ $ Another step
 $ Final step
 ```
 
-## Usage
+### Usage
 
 A few examples of useful commands and/or tasks.
 
@@ -34,9 +34,13 @@ $ Second example
 $ And keep this in mind
 ```
 
-## i
-
-Additional notes on how to deploy this on a live or release system. Explaining the most important branches, what pipelines they trigger and how to update the database (if anything special).
+### 3rd Step: combine 1st and 2nd step and perform 
+```
+def main():
+    # The website address only used for illustration
+    if check_availability("https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii"):
+        send_email("qiran@gmail.com","qiran@gmail.com","Available Studio $13xx at LondonApartment")
+```
 
 ## :clipboard:Suggestions Along the Way
 1. Most importantly, always check if scrapping certain websites is allowed; you can check either from robots.txt or using API instead.
