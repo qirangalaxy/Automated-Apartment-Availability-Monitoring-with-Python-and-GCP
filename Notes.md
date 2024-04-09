@@ -52,7 +52,7 @@ def main():
 ```
 The example code provided a webpage displaying the availability information for different types of rooms at a specific London apartment complex. Here, the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
-## Workflows On GCP & Suggestions Along the Way
+## Workflows On GCP
 1. After having the code, create google cloud scheduler first, including creation of a trigger (I used Pub/Sub).
 2. Create a google cloud function
    2.1 Select the same trigger used for scheduler.
@@ -61,7 +61,7 @@ The example code provided a webpage displaying the availability information for 
    2.4 Type "main" to Entry point because it is the first function the program starts with.
 3. You can repeat the previous step to generate several functions and assign them to the same trigger; in this case, since webpages of all apartments from this real estate have similar web structures, a little revision to the main.py is needed to have different functions, allowing you to monitor desired rooms from several apartments at the same time.
 
-## :clipboard:Additional Comments
+## :clipboard:Suggestions Along the Way
 * Most importantly, always check if scrapping certain websites is allowed; you can check either from robots.txt or using API instead.
 * Before writing the python code, think fully the logic and break down the task into several key phases.
 * When you don't know how to set up parameters at GCP, just take time to read through necessary documents it provided, which are all pretty clear, just set besides each field.
