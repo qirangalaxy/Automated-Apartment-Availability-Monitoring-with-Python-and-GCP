@@ -18,13 +18,13 @@ The code itself is quite straightforward, consisting of only three simple functi
 ```
 def check_availability(url):
     import requests
-    # implementation of common web scrapping
+    # implementation of common web scrapping e.g beautifulsoup
     response = requests.get(url)
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(response.content, 'html.parser')
 ```
 
-The code at this step is highly customized and should be adjusted accordingly, depending on the complexity of the web framework and the validation process. Also, different web scrapping techniques are available online, so I will not illustrate it in detail but focus more on how I explore and make use of the HTML structure.
+Again, the code at this step is highly customized and should be adjusted accordingly, depending on the complexity of the web framework and the validation process. Also, different web scrapping techniques are available online, so I will not illustrate it in detail but focus more on how I explore and make use of the HTML structure.
 ```
     # find all room types and information related
     room_elements = soup.find_all('div', class_='suite__column')
@@ -32,13 +32,18 @@ The code at this step is highly customized and should be adjusted accordingly, d
     found_desired_room = False  # Boolean var used later
 ```
 
-In this particular example, since my target url (https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii)
+In this particular example, since my target url (https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii) has certain HTML structure that 
 ```
     for i in range(0, len(room_elements), group_size):
+
+        # make every group contains all information for one room type
         group = room_elements[i:i+group_size]
+
+        # find room name by searching 
         link_element = group[1].find('a', class_='hyperlink-default floorplan-link')
         room_name = link_element.text.strip()
-        # this is the name of my desired 1b room
+
+        # this is the name of my desired 1b room; you can add 
         if room_name == 'Agnes':
             # check text after "Availability" is "not available" or "inquire today"/other
             availability_span = group[-1].find('span', class_='suite__field-title', string='Availability').find_next('span')
@@ -52,6 +57,8 @@ In this particular example, since my target url (https://www.drewloholdings.com/
     return found_desired_room
 
 ```
+
+A for loop is used for checking every room, and if the name of the room equals to the name of your desired room, 
 
 ### Step2: SMTP email sending settings
 ```
