@@ -25,14 +25,17 @@ def check_availability(url):
 ```
 
 Again, the code at this step is highly customized and should be adjusted accordingly, depending on the complexity of the web framework and the validation process. Also, different web scrapping techniques are available online, so I will not illustrate it in detail but focus more on how I explore and make use of the HTML structure.
+
 ```
     # find all room types and information related
     room_elements = soup.find_all('div', class_='suite__column')
-    group_size = 8  # size for each group
+    group_size = 7  # size for each group
     found_desired_room = False  # Boolean var used later
 ```
 
-In this particular example, since my target url (https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii) has certain HTML structure that 
+In this particular example, since my target url (https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii) has certain HTML structure where information about all room types contained in the class of "suite__column". Each room type consists of 7 elements separated by "suite__column" (refer the graph below), including a hyperlink of floorplan picture and the suite name, an optional link to a virtual tour, a string of "Bedrooms" and number of bedrooms the suite has, a string of "Baths" and number of baths it has, a string of "Sq.Ft." and value indicating the area, a string of "Rent" and the range, a string of "Availability" and a string of "not available".
+
+
 ```
     for i in range(0, len(room_elements), group_size):
 
@@ -43,9 +46,9 @@ In this particular example, since my target url (https://www.drewloholdings.com/
         link_element = group[1].find('a', class_='hyperlink-default floorplan-link')
         room_name = link_element.text.strip()
 
-        # this is the name of my desired 1b room; you can add 
+        # this is the name of my desired 1b room; you can add more names or modify the if statement for your own intention
         if room_name == 'Agnes':
-            # check text after "Availability" is "not available" or "inquire today"/other
+            # get text underneath Availability: availability appears in the last element 
             availability_span = group[-1].find('span', class_='suite__field-title', string='Availability').find_next('span')
             availability_text = availability_span.text.strip()
             if availability_text == 'not available':
@@ -59,8 +62,9 @@ In this particular example, since my target url (https://www.drewloholdings.com/
 ```
 
 A for loop is used for checking every room, and if the name of the room equals to the name of your desired room, it will check for the text under the field "Availability" indicating whether it is "not available" or "inquiry today" (or any other changes). 
-![image](https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/2d3aa2ff-1154-4fdc-a94f-4c21a076322c)
-![image](https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/2dbdb241-e2b2-48a5-926b-ba603301566c)
+
+<img src = "https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/2d3aa2ff-1154-4fdc-a94f-4c21a076322c" width=30% height=30%>
+<img src = "https://github.com/qirangalaxy/Automated-Apartment-Availability-Monitoring-with-Python-and-GCP/assets/166411227/2dbdb241-e2b2-48a5-926b-ba603301566c" width=25% height=30%>
 
 ### Step2: SMTP email sending settings
 ```
@@ -106,6 +110,7 @@ The example code provided a webpage displaying the availability information for 
 ## :clipboard:Suggestions Along the Way
 * Most importantly, always check if scrapping certain websites is allowed; you can check either from robots.txt or using API instead.
 * Before writing the python code, think fully the logic and break down the task into several key phases.
+* Konwing the HTML structure well is the key to extract desired information.
 * When you don't know how to set up parameters at GCP, just take time to read through necessary documents it provided, which are all pretty clear, just set besides each field.
 * If you want to check if the code can be run successfully, you can search for the available room first and see if you get an email.
 * Similarly, if you want to verify if you set up successful the scheduler with linked functions, perform checking availability for available rooms first and see if you get an email at scheduled time.
