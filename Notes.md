@@ -88,7 +88,7 @@ The second step performs the action of sending an automatic notification email w
 
 If you don't know the app username and password for your email, a detailed instruction is provided below in "Potential Obstacles And Solutions".
 
-### Step3: combine 1st and 2nd step and test if you can recieve an email!
+### Step3: Combine 1st and 2nd Step and Test If You Can Recieve An Email!
 ```
 def main():
     if check_availability("https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii"):
@@ -99,10 +99,18 @@ So, if the Boolean indicator in **Step1** turns to be "True" meaning desired roo
 
 Here, we add the URL mentioned above into the function we just built; and the sender and recipient email addresses are assigned to be both my email addresses for personal reminder (not my real email), which can be modified if you want to notify your friends or family about the update of rooms. 
 
-## Running A Python Script Periodically At Back End
-I came up with three ways how you can achieve automatic performance of certain code and implemented the one that I think most convenient for me. You can try the other two if those are better fit for you!
+## Automatically Running A Python Script Periodically At Back End
+I've outlined three approaches to automate the execution of specific code and implemented the one that I find most convenient. You can explore the other two options if they better suit your needs:
 
-1. 
+1. Convert main.py to pythonw file and place it in the Windows start-up folder. This way, the code will run each time you start up your computer.
+   * The frequency of automatic execution depends on how often you restart your computer, but you can also manually trigger it multiple times.
+
+2. Convert main.py to pythonw file and configure a Windows Task Scheduler entry.
+   * Similar to the function of GCP functions and scheduler, but but requires your computer to be turned on.
+
+3. Set up Google Cloud Functions and Google Cloud Scheduler.
+   * No need to worry about the status of your computer; the cloud setting makes all things connected.
+   * The only concern might be the cost generated from the services; but you can start with a free trial to see if it meets your need effectively.
 
 
 ## Workflows On GCP
