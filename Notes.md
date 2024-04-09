@@ -33,17 +33,17 @@ Again, the code at this step is highly customized and should be adjusted accordi
     found_desired_room = False  # Boolean var used later
 ```
 
-In this particular example, since my target url (https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii) has certain HTML structure where information about all room types contained in the class of "suite__column". Each room type consists of 7 elements separated by "suite__column" (refer the graph below), including a hyperlink of floorplan picture and the suite name, an optional link to a virtual tour, a string of "Bedrooms" and number of bedrooms the suite has, a string of "Baths" and number of baths it has, a string of "Sq.Ft." and value indicating the area, a string of "Rent" and the range, a string of "Availability" and a string of "not available".
+In this particular example, since my target url (https://www.drewloholdings.com/apartments-for-rent/rosecliffe-gardens-ii) has certain HTML structure where information about all room types contained in the class of "suite__column". Each room type consists of 7 elements separated by "suite__column" (refer the graph below), including a hyperlink of floorplan picture and the suite name, an optional link to a virtual tour, a string of "Bedrooms" and number of bedrooms the suite has, a string of "Baths" and number of baths it has, a string of "Sq.Ft." and value indicating the area, a string of "Rent" and the range, a string of "Availability" and a string of "not available". In addition, a boolean is created to indicate if a desired room is found or not, taken as outcome value.
 
 
 ```
-    for i in range(0, len(room_elements), group_size):
+    for i in range(1, len(room_elements), group_size):
 
         # make every group contains all information for one room type
         group = room_elements[i:i+group_size]
 
         # find room name by searching 
-        link_element = group[1].find('a', class_='hyperlink-default floorplan-link')
+        link_element = group[0].find('a', class_='hyperlink-default floorplan-link')
         room_name = link_element.text.strip()
 
         # this is the name of my desired 1b room; you can add more names or modify the if statement for your own intention
